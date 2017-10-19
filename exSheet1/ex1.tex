@@ -1,0 +1,86 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{forest}
+
+\usepackage[utf8]{inputenc}
+
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=30mm,
+ }
+\usepackage{fancyhdr}
+\fancyhead[L]{Leonard Korp 302582 \\ Nikita Malyschkin 319500 \\ Valentin Engelke 358096}
+\fancyhead[R]{WS 2017/18 \\ 12.10.2017}
+\pagestyle{fancy}
+
+
+
+\begin{document}
+\centerline{\Large\bfseries  Foundations of Data Science }
+\centerline{\bfseries  Exercise sheet 1}
+
+\section*{Exercise 1}
+ \subsection*{a)}
+ $f(x,y)=2x+y$
+  \subsection*{b)}
+  $f(x,y)=ax+by+c$ \\
+  (-2,0) is classified as +1, (-1,0) as -1, therefore $f(-2,0) > f(-1,0)$ and $a<0$. \\
+    (1,0) is classified as -1, (2,0) as +1, therefore $f(2,0) > f(1,0)$ and $a>0$. \\ This is contradiction, so there exists no linear function that correctly classifies $S_2$.
+   \subsection*{c)}
+The function $f(x,y)= 2x^2 +y-4$ correctly classifies every point in $S_2$. \\
+Therefore $S_2$ is realisable in $\mathcal{H}_1$
+\section*{Exercise 2}
+$\begin{tabular}{|c|c|c|c|c|}
+\hline
+Point & euclidean,k=2 & euclidean,k=3 & manhattan,k=2 & manhattan,k=3 \\
+\hline
+(4,3,3) & 1&1&1&1 \\
+(4,-1,-1) & 1&-1&1&1 \\
+(-2,4,5) & -1&-1&1&1 \\
+(-2,-6,-1)& 1 & 1&1&1 \\
+(6,0,2) & 1&1&-1&-1 \\
+\hline
+\end{tabular}$ \\
+Note: points, where there is a tie have been classified as '1'
+\section*{Exercise 3}
+\begin{forest}
+for tree={circle,draw}
+[z,
+	[1,edge label={node[midway,left] {1}}]
+ 	[x,edge label={node[midway,right] {0}},
+  		[z,edge label={node[midway,left] {1}},
+			[1,edge label={node[midway,left] {1}}]
+			[0,edge label={node[midway,right] {0}}]  		
+  		]
+  		[0,edge label={node[midway,right] {0}}]
+ 	] 
+] 
+\end{forest} \\
+Reasoning for Splits:\\
+1. z was chosen since it appears twice in the function, so if it was not chosen first, two 'z' nodes would be needed. \\
+2. now either x or z can be chosen, it does not make a difference which is chosen first
+\section*{Exercise 4}
+\subsection*{a)} 
+$P(1,2,3),Q(4,5,6) \\ \\
+h_1=  \begin{pmatrix}-2\\1\\1 \end{pmatrix} \cdot x=3 \\\\
+h_2=  \begin{pmatrix}0\\1\\-1 \end{pmatrix} \cdot x=-1 \\
+$
+The intersection of the two planes is 1-dimensional (a line). \\
+g=$   \begin{pmatrix}-2\\1\\0 \end{pmatrix} + \begin{pmatrix}1\\1\\1 \end{pmatrix}  \cdot t \\$ \\
+Es ist nicht möglich die Gerade in der Form $a\cdot x =b$ zu schreiben.
+\subsection*{b)}
+Both planes are not homogeneous. \\
+$h_{1'}=  \begin{pmatrix}-2\\1\\1 \end{pmatrix} \cdot x = 0 \\
+h_{2'}=  \begin{pmatrix}0\\1\\-1 \end{pmatrix} \cdot x = 0 \\ $
+\subsection*{c)}
+There are an infite amount of hyperplanes containing both P and Q since we can rotate the plane around the axis between P and Q. It is not possible to choose a Point R, so it would be impossible to construct a hyperplane containing P,Q,R as mentioned above, the plane can be freely rotated to contain every possible Point R.  
+\subsection*{d)}
+Choose $R'$ so it lies on the line that P and Q form and $S'$ so it does not lie on the line. \\
+For example: $ R' = \begin{pmatrix}0\\1\\2 \end{pmatrix}, S' = \begin{pmatrix}0\\0\\0 \end{pmatrix}$ \\
+Three non-collinear points (e.g. P,Q,S') define exactly one plane.
+\end{document}
