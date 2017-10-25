@@ -28,9 +28,10 @@ const kMeansCluster = (k, S) => {
         .fill(0)
         .map(i => new Array(dim).fill(0).map(i => Math.random()))
         .map(i => vectorScale(i, maxNorm / Math.sqrt(scalarProduct(i, i))));
-    z = [[2, 12], [3, 11], [3, 8]];
+    z = [[100, 100], [200, 200], [3, 8]];
     let C = new Array(k).fill([]);
     let oldC = new Array(k).fill([1]);
+    console.log(z);
 
     while (JSON.stringify(C) !== JSON.stringify(oldC)) {
         oldC = C;
