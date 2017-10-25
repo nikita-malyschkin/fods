@@ -29,6 +29,7 @@ const kMeansCluster = (k, S) => {
         .map(i => new Array(dim).fill(0).map(i => Math.random()))
         .map(i => vectorScale(i, maxNorm / Math.sqrt(scalarProduct(i, i))));
     z = [[2, 12], [3, 11], [3, 8]];
+    // z = [[6, 10], [3, 8], [6, 4], [16.5, 6]];
     let C = new Array(k).fill([]);
     let oldC = new Array(k).fill([1]);
 
@@ -61,4 +62,4 @@ const kMeansCluster = (k, S) => {
 
 const S = [[2, 12], [3, 11], [3, 8], [5, 4], [7, 5], [7, 3], [10, 8], [13, 8]];
 
-kMeansCluster(3, S);
+kMeansCluster(4, S);

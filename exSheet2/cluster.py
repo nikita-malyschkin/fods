@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 def main():
 	S=np.array([[2,12],[3,11],[3,8],[5,4],[7,5],[7,3],[10,8],[13,8]])
-	z=np.array([[2,12],[3,11],[3,8]])
+	z=np.array([[6, 10], [3, 8], [6, 4], [16.5, 6]])
 	clus=np.zeros(8)
 
 	changed=True
