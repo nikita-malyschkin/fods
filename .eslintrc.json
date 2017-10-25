@@ -12,6 +12,7 @@
       { "devDependencies": ["tests*/**", "scripts/**"] }
     ],
     "no-console": "off",
+    "no-unused-vars": "off",
     "no-else-return": "error",
     "no-inner-declarations": "error",
     "no-unneeded-ternary": "error",
