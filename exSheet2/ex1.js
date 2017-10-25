@@ -20,29 +20,13 @@ const normalizedS = normalizeSequence(S);
 
 while (!done) {
     done = true;
-    steps = steps + 1;
-    console.log("new round");
-    console.log(w);
     normalizedS.forEach(entry => {
-        console.log(entry);
         if (Math.sign(scalarProduct(w, entry[0])) * entry[1] - 1) {
             w = vectorAdd(w, vectorScale(entry[0], entry[1]));
+            steps = steps + 1;
             done = false;
         }
     });
 }
 
-console.log(w, steps);
-// y=np.array([-1,1,1,-1,-1,-1])
-// finished=False
-
-// while (finished==False):
-//     finished=True
-//     steps=0
-//     for t in range(0,6):
-//         if (np.sign(np.dot(w,x[t]))!=y[t]):
-//             w=w+y[t]*x[t]
-//             steps+=1
-//             print(w)
-//             finished=False
-// print("Finished in "+str(steps)+" steps")
+console.log(w.join("\t"));
