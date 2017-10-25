@@ -8,11 +8,7 @@ const vectorScale = (v, a) => v.map(val => val * a);
 
 const euclideanNorm = v => Math.sqrt(v.reduce((prev, curr) => prev + curr * curr, 0));
 
-const homogenizeSequence = S => S.map(entry => [[...entry[0], 1], entry[1]]);
-
 const maxNormforSequence = S => S.reduce((prev, curr) => Math.max(prev, euclideanNorm(curr)), 1);
-
-const normalizeSequence = S => S.map(item => [item[0].map(val => val / maxNormforSequence(S)), item[1]]);
 
 const euclideanDistance = (a, b) => {
     if (a.length != b.length) {
@@ -32,7 +28,7 @@ const kMeansCluster = (k, S) => {
         .fill(0)
         .map(i => new Array(dim).fill(0).map(i => Math.random()))
         .map(i => vectorScale(i, maxNorm / Math.sqrt(scalarProduct(i, i))));
-
+    z = [[2, 12], [3, 11], [3, 8]];
     let C = new Array(k).fill([]);
     let oldC = new Array(k).fill([1]);
 
