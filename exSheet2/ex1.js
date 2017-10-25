@@ -25,7 +25,9 @@ let done = false;
 let steps = 0;
 let w = [0, 0, 0, 0];
 const S = [[[4, 2, 1], -1], [[-1, 2, -4], 1], [[8, -2, -3], 1], [[1, -1, 1], -1], [[2, -2, 5], -1], [[-6, 2, 7], -1]];
-// shuffle(S);
+shuffle(S);
+console.log(S.join("\n"));
+console.log(JSON.stringify(S));
 const homogeneousS = homogenizeSequence(S);
 const normalizedS = normalizeSequence(homogeneousS);
 
@@ -34,11 +36,12 @@ while (!done) {
     normalizedS.forEach(entry => {
         if (Math.sign(scalarProduct(w, entry[0])) * entry[1] - 1) {
             w = vectorAdd(w, vectorScale(entry[0], entry[1]));
+            console.log(w.join("\\\\"));
             steps = steps + 1;
             done = false;
         }
     });
 }
 
-console.log(w.join("\t"));
+//console.log(w.join("\t"));
 console.log("in", steps, "steps");
