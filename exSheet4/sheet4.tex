@@ -1,0 +1,34 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\usepackage[utf8]{inputenc}
+
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=30mm,
+ }
+\usepackage{fancyhdr}
+\fancyhead[L]{Leonard Korp 302582 \\ Nikita Malyschkin 319500 \\ Valentin Engelke 358096}
+\fancyhead[R]{WS 2017/18 \\ 2.11.2017}
+\pagestyle{fancy}
+
+
+
+\begin{document}
+\centerline{\Large\bfseries  Foundations of Data Science }
+\centerline{\bfseries  Exercise sheet 4}
+
+
+\section*{Exercise 4}
+Final weights:
+\[w= \begin{pmatrix}
+0.90903318\\  0.86525132 \\  0.95052105 \\ 0.840806 \\    1.13883713
+\end{pmatrix} \]
+\\
+One way, to choose the best expert would be to take the expert, that most often gives correct advice. This would be the experts 1 and 3, who are right 4 times. It would be also possible to choose the expert with the highest weight and who has the highest ratio of correct predictions to wrong predictions, which is expert 5, who is right with every prediction he makes.
+\end{document}
