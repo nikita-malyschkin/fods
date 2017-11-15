@@ -3,19 +3,19 @@ import matplotlib.pyplot as plt
 
 
 def main():
-	points=points_ball()
+	points=points_cube()
 	for x in points:
 		print(np.linalg.norm(x))
 	dist=distance(points)
 	ang=angle(points)
 
 	plt.figure(1)
-	plt.hist(dist,20)
-	plt.title("Pairwise distance of points in unit ball")
+	plt.hist(dist,30)
+	plt.title("Pairwise distance of points in unit cube")
 	
 	plt.figure(2)
-	plt.hist(ang,20)
-	plt.title("Pairwise angle of points in unit ball")
+	plt.hist(ang,30)
+	plt.title("Pairwise angle of points in unit cube")
 
 	plt.show()
 
