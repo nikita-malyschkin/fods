@@ -1,0 +1,41 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=30mm,
+ }
+\usepackage{fancyhdr}
+\fancyhead[L]{Leonard Korp 302582 \\ Nikita Malyschkin 319500 \\ Valentin Engelke 358096}
+\fancyhead[R]{WS 2017/18 \\ 13.11.2017}
+\pagestyle{fancy}
+
+
+
+\begin{document}
+\centerline{\Large\bfseries  Foundations of Data Science }
+\centerline{\bfseries  Exercise sheet 7}
+
+
+\section*{Exercise 4}
+\subsection*{a)}
+For $m_1$ the result of the power iteration after 5 steps is:
+\[y=\begin{pmatrix} 1 \\ 0.3357  \end{pmatrix} \ \ , \lambda=-2.0278 \] \\
+For $m_2$ the result of the power iteration after 5 steps is:
+\[y=\begin{pmatrix} 0.5017 \\ 0.4949 \\1  \end{pmatrix} \ \ , \lambda=2.9886 \]
+\subsection*{b)}
+\[y_1=\begin{pmatrix} 1 \\ 1 \\-1  \end{pmatrix} \ \ y_2=\begin{pmatrix} 1 \\ 1 \\1  \end{pmatrix} \ \ y_3=\begin{pmatrix} 1 \\ 1 \\-1  \end{pmatrix}\  \ y_4=\begin{pmatrix} 1 \\ 1 \\1  \end{pmatrix} \]
+The algorithm fails to converge. 
+\subsection*{c)}
+In each update step we now calculate $y=A^{-1} x$. This give us the eigenvalue $\lambda=-1$ and the eigenvector $y= \begin{pmatrix} 1 \\ 0.25   \end{pmatrix}$
+\subsection*{d)}
+For $M_4$ the algorithm needs 4 iterations. For $M_5$ 68 iterations are needed. 
+
+\end{document}
+
