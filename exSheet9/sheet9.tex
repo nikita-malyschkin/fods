@@ -23,7 +23,10 @@
 \begin{document}
 \centerline{\Large\bfseries  Foundations of Data Science }
 \centerline{\bfseries  Exercise sheet 9}
-
+\section*{Exercise 3}
+Let $n_1$ be number of entries with the value 1 in the matrix. Then the space needed for the first approach is $n*n*1$ bit . The second approach needs $n_1 * \lceil log_2 n \rceil$ bit. 
+\[n_1 * \lceil log_2 n \rceil < n*n \Leftrightarrow \frac{n_1}{n*n} < \frac{1}{\lceil log_2 n \rceil} \]
+This means, that the fraction of 1s has to be lower than $\frac{1}{\lceil log_2 n \rceil}$ for the second approach to save space.
 \section*{Exercise 4}
 \subsection*{a)}
 \begin{lstlisting}
