@@ -1,0 +1,89 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\usepackage[utf8]{inputenc}
+
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=30mm,
+ }
+\usepackage{fancyhdr}
+\fancyhead[L]{Leonard Korp 302582 \\ Nikita Malyschkin 319500 \\ Valentin Engelke 358096}
+\fancyhead[R]{WS 2017/18 \\  14.12.2017}
+\pagestyle{fancy}
+
+
+
+\begin{document}
+\centerline{\Large\bfseries  Foundations of Data Science }
+\centerline{\bfseries  Exercise sheet 9}
+
+\section*{Exercise 4}
+\subsection*{a)}
+\begin{lstlisting}
+function MAP(value)
+	max=INTEGER.MIN_VALUE
+	for all v in value do
+		if(v>max)
+			max=v
+	emit(1,max)
+	
+function REDUCE(key,values)
+	max=INTEGER.MIN_VALUE
+	for all v in values do
+		if(v>max)
+			max=v
+	emit(max)
+\end{lstlisting}
+\subsection*{b)}
+\begin{lstlisting}
+function MAP(value)
+	for all v in value do
+		emit(1,v)
+
+	
+function REDUCE(key,values)
+	sum=0
+	n=0
+	for all v in values do
+		sum=sum+v
+		n=n+1
+	a=sum/n
+	emit(1,a)
+\end{lstlisting}
+
+\subsection*{c)}
+\begin{lstlisting}
+function MAP(value)
+	for all v in value do
+		emit(v,1)
+
+	
+function REDUCE(key,values)
+	emit(1,key)
+\end{lstlisting}
+
+\subsection*{d)}
+\begin{lstlisting}
+function MAP(value)
+	for all v in value do
+		emit(v,1)
+
+	
+function REDUCE(keys,values)
+	cnt=0
+	for all k in values do
+		cnt=cnt+1
+	emit(1,cnt)
+		
+\end{lstlisting}
+
+
+\end{document}
+
